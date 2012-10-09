@@ -14,11 +14,11 @@ func ReadConfigFile(fname string, environment string, extension string) (c *Conf
 	var file *os.File
 	var composedFileName string
 
-	if environment != nil {
+	if environment != "" {
 		composedFileName = fname + "." + environment + "." + extension
 	}
 
-	if file, err = os.Open(fname); err != nil {
+	if file, err = os.Open(composedFileName); err != nil {
 		return nil, err
 	}
 

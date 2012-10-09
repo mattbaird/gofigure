@@ -143,8 +143,8 @@ func (c *ConfigFile) RemoveOption(section string, option string) bool {
 }
 
 // NewConfigFile creates an empty configuration representation.
-// This representation can be filled with AddSection and AddOption and then
-// saved to a file using WriteConfigFile.
+// This representation can be filled with AddSection and AddOption
+// TODO: save to a file using WriteConfigFile.
 func NewConfigFile() *ConfigFile {
 	c := new(ConfigFile)
 	c.data = make(map[string]map[string]string)
