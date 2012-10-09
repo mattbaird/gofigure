@@ -12,6 +12,11 @@ import (
 // This representation can be queried with GetString, etc.
 func ReadConfigFile(fname string, environment string, extension string) (c *ConfigFile, err error) {
 	var file *os.File
+	var composedFileName string
+
+	if environment != nil {
+		composedFileName = fname + "." + environment + "." + extension
+	}
 
 	if file, err = os.Open(fname); err != nil {
 		return nil, err
