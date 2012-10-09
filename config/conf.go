@@ -14,7 +14,7 @@
 //
 // To read this configuration file, do:
 //
-//      c, err := conf.ReadConfigFile("server.conf")
+//      c, err := conf.ReadConfigFile("server", "development", "conf") // will try and load server.development.conf
 //      c.GetString("default", "host")               // returns example.com
 //      c.GetInt("", "port")                         // returns 443 (assumes "default")
 //      c.GetBool("", "php")                         // returns true
